@@ -1,15 +1,20 @@
 {
-    "users": [{
-            "username": "user1",
-            "password": "password1"
-        },
-        {
-            "username": "user2",
-            "password": "password2"
-        },
-        {
+    "res": [{
             "username": "namsimsuchapter00",
             "password": "namsimsuchapter00"
+        },
+        {
+            "username": "admin007",
+            "password": "admin007"
+        }
+    ],
+    "nams": [{
+            "username": "namsimsuchapter00",
+            "password": "namsimsuchapter00"
+        },
+        {
+            "username": "admin007",
+            "password": "admin007"
         }
     ]
 }

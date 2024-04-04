@@ -10,7 +10,7 @@ let userData = JSON.parse(fs.readFileSync('db/users.json'));
 // Login route
 router.post('/', (req, res) => {
     const { username, password } = req.body;
-    const user = userData.users.find(user => user.username === username && user.password === password);
+    const user = userData.res.find(user => user.username === username && user.password === password);
     if (user) {
         res.send('Login successful!');
     } else {
