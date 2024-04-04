@@ -8,7 +8,7 @@ const bodyParser = require('body-parser')
 let userData = JSON.parse(fs.readFileSync('db/users.json'));
 
 // Login route
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
     const { username, password } = req.body;
     const user = userData.users.find(user => user.username === username && user.password === password);
     if (user) {
