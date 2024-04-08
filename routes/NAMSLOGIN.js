@@ -8,14 +8,14 @@ const bodyParser = require('body-parser')
 let userData = JSON.parse(fs.readFileSync('db/users.json'));
 
 // Login route
-router.post('/', (req, res) => {
-    const { username, password } = req.body;
-    const user = userData.nams.find(user => user.username === username && user.password === password);
-    if (user) {
-        res.send('Login successful!');
-    } else {
-        res.status(401).send('Invalid username or password');
-    }
-});
+//router.post('/', (req, res) => {
+//const { username, password } = req.body;
+//const user = userData.nams.find(user => user.username === username && user.password === password);
+//if (user) {
+// res.send('Login successful!');
+//} else {
+// res.status(401).send('Invalid username or password');
+//}
+//});
 
 module.exports = router
