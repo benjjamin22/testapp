@@ -10,7 +10,7 @@ let userData = JSON.parse(fs.readFileSync("/tmp", 'db/users.json'));
 //let userData = fs.writeFileSync(filepath, JSON.stringify(data))
 
 //Login route
-router.post('/', (req, res) => {
+router.get('/', (req, res) => {
     const { username, password } = req.body;
     const user = userData.res.find(user => user.username === username && user.password === password);
     if (user) {
