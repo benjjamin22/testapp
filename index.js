@@ -21,8 +21,11 @@ const limiter = rateLimit({
 app.use(limiter)
 app.set('trust proxy', 1)
 
+const corsConfig = { origin: '', credentials: true, methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'] }
+
 // Enable cors
-app.use(cors())
+app.use(cors(corsConfig))
+app.options("", cors(corsConfig))
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
@@ -30,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 app.use('/api', require('./routes'))
 app.use('/nams', require('./routes/nams'))
-app.use('/login', require('./routes/logini'))
+app.use('/login', require('./routes/login'))
 app.use('/namslogin', require('./routes/NAMSLOGIN'))
 
 // Error handler middleware
