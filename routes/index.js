@@ -4,11 +4,14 @@ const router = express.Router()
 const needle = require('needle')
 const apicache = require('apicache')
 
+
 // Env vars
 const API_BASE_URL = process.env.API_BASE_URL
 
 // Init cache
 let cache = apicache.middleware
+
+
 
 router.get('/', cache('2 minutes'), async(req, res, next) => {
     try {
@@ -24,6 +27,8 @@ router.get('/', cache('2 minutes'), async(req, res, next) => {
     } catch (error) {
         next(error)
     }
-})
+});
+
+
 
 module.exports = router
